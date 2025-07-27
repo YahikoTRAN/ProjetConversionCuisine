@@ -1,0 +1,64 @@
+[
+  {
+    "Nom": "Soupe de potiron",
+    "TempsPreparation": 30,
+    "Difficulte": "Moyen",
+    "Ingredients": [
+      "potiron",
+      "carotte",
+      "oignon",
+      "cr\u00E8me"
+    ],
+    "Calories": 200
+  },
+  {
+    "Nom": "Cr\u00EApes",
+    "TempsPreparation": 20,
+    "Difficulte": "Facile",
+    "Ingredients": [
+      "farine",
+      "\u0153ufs",
+      "lait",
+      "beurre"
+    ],
+    "Calories": 350
+  },
+  {
+    "Nom": "Salade C\u00E9sar",
+    "TempsPreparation": 15,
+    "Difficulte": "Facile",
+    "Ingredients": [
+      "laitue",
+      "poulet",
+      "cro\u00FBtons",
+      "parmesan",
+      "sauce c\u00E9sar"
+    ],
+    "Calories": 450
+  },
+  {
+    "Nom": "P\u00E2tes Carbonara",
+    "TempsPreparation": 20,
+    "Difficulte": "Facile",
+    "Ingredients": [
+      "p\u00E2tes",
+      "lardons",
+      "\u0153uf",
+      "cr\u00E8me"
+    ],
+    "Calories": 650
+  },
+  {
+    "Nom": "Gratin dauphinois",
+    "TempsPreparation": 60,
+    "Difficulte": "Difficile",
+    "Ingredients": [
+      "pommes de terre",
+      "cr\u00E8me",
+      "lait",
+      "ail",
+      "fromage"
+    ],
+    "Calories": 700
+  }
+]

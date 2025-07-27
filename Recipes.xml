@@ -23,4 +23,66 @@
     </Ingredients>
     <Calories>300</Calories>
   </Recette>
+  <Recette>
+    <Nom>Salade César</Nom>
+    <TempsPreparation>15</TempsPreparation>
+    <Difficulte>Facile</Difficulte>
+    <Ingredients>
+      <Ingredient>laitue</Ingredient>
+      <Ingredient>poulet</Ingredient>
+      <Ingredient>croûtons</Ingredient>
+      <Ingredient>parmesan</Ingredient>
+      <Ingredient>sauce césar</Ingredient>
+    </Ingredients>
+    <Calories>450</Calories>
+  </Recette>
+  <Recette>
+    <Nom>Gratin dauphinois</Nom>
+    <TempsPreparation>60</TempsPreparation>
+    <Difficulte>Difficile</Difficulte>
+    <Ingredients>
+      <Ingredient>pommes de terre</Ingredient>
+      <Ingredient>crème</Ingredient>
+      <Ingredient>lait</Ingredient>
+      <Ingredient>ail</Ingredient>
+      <Ingredient>fromage</Ingredient>
+    </Ingredients>
+    <Calories>700</Calories>
+  </Recette>
+  <Recette>
+    <Nom>Soupe de potiron</Nom>
+    <TempsPreparation>30</TempsPreparation>
+    <Difficulte>Moyen</Difficulte>
+    <Ingredients>
+      <Ingredient>potiron</Ingredient>
+      <Ingredient>carotte</Ingredient>
+      <Ingredient>oignon</Ingredient>
+      <Ingredient>crème</Ingredient>
+    </Ingredients>
+    <Calories>200</Calories>
+  </Recette>
+  <Recette>
+    <Nom>Pizza Margherita</Nom>
+    <TempsPreparation>25</TempsPreparation>
+    <Difficulte>Moyen</Difficulte>
+    <Ingredients>
+      <Ingredient>pâte à pizza</Ingredient>
+      <Ingredient>tomate</Ingredient>
+      <Ingredient>mozzarella</Ingredient>
+      <Ingredient>basilic</Ingredient>
+    </Ingredients>
+    <Calories>550</Calories>
+  </Recette>
+  <Recette>
+    <Nom>Crêpes</Nom>
+    <TempsPreparation>20</TempsPreparation>
+    <Difficulte>Facile</Difficulte>
+    <Ingredients>
+      <Ingredient>farine</Ingredient>
+      <Ingredient>œufs</Ingredient>
+      <Ingredient>lait</Ingredient>
+      <Ingredient>beurre</Ingredient>
+    </Ingredients>
+    <Calories>350</Calories>
+  </Recette>
 </Recettes>

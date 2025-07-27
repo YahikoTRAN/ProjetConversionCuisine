@@ -38,6 +38,15 @@ namespace ProjetConversionCuisine.Services
             return recipes.OrderBy(r => r.Calories);
         }
 
+        public IEnumerable<Recipe> ExcludeIngredient(IEnumerable<Recipe> recipes, string ingredient)
+        {
+            if (string.IsNullOrWhiteSpace(ingredient))
+                return recipes;
+
+            ingredient = ingredient.ToLowerInvariant();
+            return recipes.Where(r => !r.Ingredients.Any(i => i.ToLowerInvariant().Contains(ingredient)));
+        }
+
         public void DisplayRecipes(IEnumerable<Recipe> recipes)
         {
             foreach (var r in recipes)
