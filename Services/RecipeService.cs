@@ -1,68 +1,83 @@
-using System.Collections.Generic;
 using System.Text.Json;
-using ClosedXML.Excel;
+using System.Xml.Linq;
 using ProjetConversionCuisine.Models;
 
-namespace ProjetConversionCuisine.Services;
-
-public class RecipeService
+namespace ProjetConversionCuisine.Services
 {
-    public List<Recipe> LoadRecipes(string path)
+    public class RecipeService
     {
-        if (!File.Exists(path)) return new List<Recipe>();
-        string json = File.ReadAllText(path);
-        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-        var recipes = JsonSerializer.Deserialize<List<Recipe>>(json, options);
-        return recipes ?? new List<Recipe>();
-    }
-
-    public List<Recipe> Search(List<Recipe> recipes, string keyword)
-    {
-        if (string.IsNullOrWhiteSpace(keyword)) return recipes;
-        keyword = keyword.ToLowerInvariant();
-        return recipes.Where(r => r.Nom.ToLowerInvariant().Contains(keyword) ||
-                                  r.Ingredients.Any(i => i.ToLowerInvariant().Contains(keyword)))
-                      .ToList();
-    }
-
-    public List<Recipe> SortByCalories(List<Recipe> recipes)
-    {
-        return recipes.OrderBy(r => r.Calories).ToList();
-    }
-
-    public void DisplayRecipes(IEnumerable<Recipe> recipes)
-    {
-        foreach (var r in recipes)
+        public List<Recipe> LoadRecipes(string path)
         {
-            Console.WriteLine($"Nom : {r.Nom}");
-            Console.WriteLine($"Temps : {r.TempsPreparation} min");
-            Console.WriteLine($"Difficulte : {r.Difficulte}");
-            Console.WriteLine($"Ingredients : {string.Join(", ", r.Ingredients)}");
-            Console.WriteLine($"Calories : {r.Calories}");
-            Console.WriteLine(new string('-', 30));
+            if (!File.Exists(path))
+            {
+                Console.WriteLine($"Fichier {path} introuvable.");
+                return new List<Recipe>();
+            }
+
+            string json = File.ReadAllText(path);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+            var recipes = JsonSerializer.Deserialize<List<Recipe>>(json, options);
+            return recipes ?? new List<Recipe>();
         }
-    }
 
-    public void ExportToExcel(IEnumerable<Recipe> recipes, string path)
-    {
-        using var workbook = new XLWorkbook();
-        var worksheet = workbook.AddWorksheet("Recettes");
-        worksheet.Cell(1, 1).Value = "Nom";
-        worksheet.Cell(1, 2).Value = "TempsPreparation";
-        worksheet.Cell(1, 3).Value = "Difficulte";
-        worksheet.Cell(1, 4).Value = "Ingredients";
-        worksheet.Cell(1, 5).Value = "Calories";
-
-        int row = 2;
-        foreach (var r in recipes)
+        public IEnumerable<Recipe> Search(IEnumerable<Recipe> recipes, string keyword)
         {
-            worksheet.Cell(row, 1).Value = r.Nom;
-            worksheet.Cell(row, 2).Value = r.TempsPreparation;
-            worksheet.Cell(row, 3).Value = r.Difficulte;
-            worksheet.Cell(row, 4).Value = string.Join(", ", r.Ingredients);
-            worksheet.Cell(row, 5).Value = r.Calories;
-            row++;
+            if (string.IsNullOrWhiteSpace(keyword))
+                return recipes;
+
+            keyword = keyword.ToLowerInvariant();
+            return recipes.Where(r => r.Nom.ToLowerInvariant().Contains(keyword) ||
+                                      r.Ingredients.Any(i => i.ToLowerInvariant().Contains(keyword)));
         }
-        workbook.SaveAs(path);
+
+        public IEnumerable<Recipe> SortByCalories(IEnumerable<Recipe> recipes)
+        {
+            return recipes.OrderBy(r => r.Calories);
+        }
+
+        public void DisplayRecipes(IEnumerable<Recipe> recipes)
+        {
+            foreach (var r in recipes)
+            {
+                Console.WriteLine($"{r.Nom} - {r.Calories} calories - {r.TempsPreparation} min - {r.Difficulte}");
+                Console.WriteLine("Ingredients: " + string.Join(", ", r.Ingredients));
+                Console.WriteLine();
+            }
+        }
+
+        public void ConvertXmlToJson(string xmlPath, string jsonPath)
+        {
+            if (!File.Exists(xmlPath))
+            {
+                Console.WriteLine($"Fichier {xmlPath} introuvable.");
+                return;
+            }
+
+            var doc = XDocument.Load(xmlPath);
+            var recipes = doc.Root?.Elements("Recette").Select(x => new Recipe
+            {
+                Nom = x.Element("Nom")?.Value ?? string.Empty,
+                TempsPreparation = int.TryParse(x.Element("TempsPreparation")?.Value, out var tp) ? tp : 0,
+                Difficulte = x.Element("Difficulte")?.Value ?? string.Empty,
+                Ingredients = x.Element("Ingredients")?.Elements("Ingredient").Select(i => i.Value).ToList() ?? new List<string>(),
+                Calories = int.TryParse(x.Element("Calories")?.Value, out var c) ? c : 0
+            }).ToList();
+
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string json = JsonSerializer.Serialize(recipes, options);
+            File.WriteAllText(jsonPath, json);
+            Console.WriteLine($"Conversion realisee : {jsonPath}");
+        }
+
+        public void ExportToJson(IEnumerable<Recipe> recipes, string jsonPath)
+        {
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string json = JsonSerializer.Serialize(recipes, options);
+            File.WriteAllText(jsonPath, json);
+            Console.WriteLine($"Recettes exportees dans {jsonPath}");
+        }
     }
 }

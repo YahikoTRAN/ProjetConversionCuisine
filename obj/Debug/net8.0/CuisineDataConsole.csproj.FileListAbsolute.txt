@@ -1,0 +1,15 @@
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\bin\Debug\net8.0\CuisineDataConsole.exe
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\bin\Debug\net8.0\CuisineDataConsole.deps.json
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\bin\Debug\net8.0\CuisineDataConsole.runtimeconfig.json
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\bin\Debug\net8.0\CuisineDataConsole.dll
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\bin\Debug\net8.0\CuisineDataConsole.pdb
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\obj\Debug\net8.0\CuisineDataConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\obj\Debug\net8.0\CuisineDataConsole.AssemblyInfoInputs.cache
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\obj\Debug\net8.0\CuisineDataConsole.AssemblyInfo.cs
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\obj\Debug\net8.0\CuisineDataConsole.csproj.CoreCompileInputs.cache
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\obj\Debug\net8.0\CuisineDataConsole.sourcelink.json
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\obj\Debug\net8.0\CuisineDataConsole.dll
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\obj\Debug\net8.0\refint\CuisineDataConsole.dll
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\obj\Debug\net8.0\CuisineDataConsole.pdb
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\obj\Debug\net8.0\CuisineDataConsole.genruntimeconfig.cache
+C:\Users\chris\Documents\IPI2025\linkQ\ProjetConversionCuisine\ProjetConversionCuisine\obj\Debug\net8.0\ref\CuisineDataConsole.dll

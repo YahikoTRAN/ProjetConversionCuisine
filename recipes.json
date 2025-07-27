@@ -1,16 +1,26 @@
 [
   {
-    "Nom": "Pâtes Carbonara",
+    "Nom": "P\u00E2tes Carbonara",
     "TempsPreparation": 20,
     "Difficulte": "Facile",
-    "Ingredients": ["pâtes", "lardons", "œuf", "crème"],
+    "Ingredients": [
+      "p\u00E2tes",
+      "lardons",
+      "\u0153uf",
+      "cr\u00E8me"
+    ],
     "Calories": 650
   },
   {
     "Nom": "Ratatouille",
     "TempsPreparation": 40,
     "Difficulte": "Moyen",
-    "Ingredients": ["courgette", "aubergine", "poivron", "tomate"],
+    "Ingredients": [
+      "courgette",
+      "aubergine",
+      "poivron",
+      "tomate"
+    ],
     "Calories": 300
   }
 ]

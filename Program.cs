@@ -1,27 +1,33 @@
-using System;
 using ProjetConversionCuisine.Services;
 
 var service = new RecipeService();
 
-// Load recipes
+// Convertir le fichier XML en JSON puis charger le résultat
+service.ConvertXmlToJson("recipes.xml", "recipes.json");
 var recipes = service.LoadRecipes("recipes.json");
+
 if (recipes.Count == 0)
 {
-    Console.WriteLine("Aucune recette chargee.");
+    Console.WriteLine("Aucune recette trouvée.");
     return;
 }
 
-Console.Write("Mot cle de recherche (laisser vide pour aucune) : ");
-var keyword = Console.ReadLine() ?? string.Empty;
-var results = service.Search(recipes, keyword);
-results = service.SortByCalories(results);
+Console.Write("Mot cle de recherche (laisser vide pour tout afficher): ");
+string? keyword = Console.ReadLine();
+var result = service.Search(recipes, keyword ?? string.Empty);
 
-service.DisplayRecipes(results);
-
-Console.Write("Exporter vers Excel ? (o/n) : ");
-var export = Console.ReadLine();
-if (export?.Trim().ToLower() == "o")
+Console.Write("Trier par calories ? (o/n): ");
+var sortInput = Console.ReadLine();
+if (!string.IsNullOrWhiteSpace(sortInput) && sortInput.Trim().ToLower() == "o")
 {
-    service.ExportToExcel(results, "export.xlsx");
-    Console.WriteLine("Fichier export.xlsx cree.");
+    result = service.SortByCalories(result).ToList();
+}
+
+service.DisplayRecipes(result);
+
+Console.Write("Exporter ces recettes vers un fichier JSON ? (o/n): ");
+var exportInput = Console.ReadLine();
+if (!string.IsNullOrWhiteSpace(exportInput) && exportInput.Trim().ToLower() == "o")
+{
+    service.ExportToJson(result, "export.json");
 }

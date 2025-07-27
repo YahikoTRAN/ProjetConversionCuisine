@@ -1,0 +1,26 @@
+<Recettes>
+  <Recette>
+    <Nom>Pâtes Carbonara</Nom>
+    <TempsPreparation>20</TempsPreparation>
+    <Difficulte>Facile</Difficulte>
+    <Ingredients>
+      <Ingredient>pâtes</Ingredient>
+      <Ingredient>lardons</Ingredient>
+      <Ingredient>œuf</Ingredient>
+      <Ingredient>crème</Ingredient>
+    </Ingredients>
+    <Calories>650</Calories>
+  </Recette>
+  <Recette>
+    <Nom>Ratatouille</Nom>
+    <TempsPreparation>40</TempsPreparation>
+    <Difficulte>Moyen</Difficulte>
+    <Ingredients>
+      <Ingredient>courgette</Ingredient>
+      <Ingredient>aubergine</Ingredient>
+      <Ingredient>poivron</Ingredient>
+      <Ingredient>tomate</Ingredient>
+    </Ingredients>
+    <Calories>300</Calories>
+  </Recette>
+</Recettes>
