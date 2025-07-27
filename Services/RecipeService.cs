@@ -38,6 +38,42 @@ namespace ProjetConversionCuisine.Services
             return recipes.OrderBy(r => r.Calories);
         }
 
+        public IEnumerable<Recipe> SortByTime(IEnumerable<Recipe> recipes)
+        {
+            return recipes.OrderBy(r => r.TempsPreparation);
+        }
+
+        public IEnumerable<Recipe> FilterByDifficulty(IEnumerable<Recipe> recipes, string difficulty)
+        {
+            if (string.IsNullOrWhiteSpace(difficulty))
+                return recipes;
+
+            difficulty = difficulty.ToLowerInvariant();
+            return recipes.Where(r => r.Difficulte.ToLowerInvariant().Contains(difficulty));
+        }
+
+        public IEnumerable<Recipe> FilterByMaxCalories(IEnumerable<Recipe> recipes, int maxCalories)
+        {
+            if (maxCalories <= 0)
+                return recipes;
+
+            return recipes.Where(r => r.Calories <= maxCalories);
+        }
+
+        public IEnumerable<IGrouping<string, Recipe>> GroupByDifficulty(IEnumerable<Recipe> recipes)
+        {
+            return recipes.GroupBy(r => r.Difficulte);
+        }
+
+        public void DisplayGroupedRecipes(IEnumerable<IGrouping<string, Recipe>> groups)
+        {
+            foreach (var group in groups)
+            {
+                Console.WriteLine($"--- {group.Key} ---");
+                DisplayRecipes(group);
+            }
+        }
+
         public IEnumerable<Recipe> ExcludeIngredient(IEnumerable<Recipe> recipes, string ingredient)
         {
             if (string.IsNullOrWhiteSpace(ingredient))
