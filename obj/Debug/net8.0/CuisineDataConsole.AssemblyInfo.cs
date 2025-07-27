@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CuisineDataConsole")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+061e48d14688a4ed14156a3e4eb7b4484c1d5550")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8273823bb7c627ad7ada482ced3e760087d91b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("CuisineDataConsole")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CuisineDataConsole")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

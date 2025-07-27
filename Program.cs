@@ -2,12 +2,19 @@ using ProjetConversionCuisine.Services;
 
 var service = new RecipeService();
 
-// Proposer la conversion du XML en JSON avant de charger les recettes
-Console.Write("Convertir le fichier XML en JSON ? (o/n): ");
-var convertInput = Console.ReadLine();
-if (!string.IsNullOrWhiteSpace(convertInput) && convertInput.Trim().ToLower() == "o")
+// Proposer une conversion eventuelle avant de charger les recettes
+Console.WriteLine("Choisir une conversion (laisser vide pour aucune) :");
+Console.WriteLine("1 - XML vers JSON");
+Console.WriteLine("2 - JSON vers XML");
+Console.Write("Votre choix : ");
+var convertChoice = Console.ReadLine();
+if (convertChoice == "1")
 {
     service.ConvertXmlToJson("recipes.xml", "recipes.json");
+}
+else if (convertChoice == "2")
+{
+    service.ConvertJsonToXml("recipes.json", "recipes.xml");
 }
 
 var recipes = service.LoadRecipes("recipes.json");

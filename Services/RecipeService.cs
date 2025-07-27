@@ -117,6 +117,36 @@ namespace ProjetConversionCuisine.Services
             Console.WriteLine($"Conversion realisee : {jsonPath}");
         }
 
+        public void ConvertJsonToXml(string jsonPath, string xmlPath)
+        {
+            if (!File.Exists(jsonPath))
+            {
+                Console.WriteLine($"Fichier {jsonPath} introuvable.");
+                return;
+            }
+
+            string json = File.ReadAllText(jsonPath);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+            var recipes = JsonSerializer.Deserialize<List<Recipe>>(json, options) ?? new List<Recipe>();
+
+            var doc = new XDocument(
+                new XElement("Recettes",
+                    recipes.Select(r =>
+                        new XElement("Recette",
+                            new XElement("Nom", r.Nom),
+                            new XElement("TempsPreparation", r.TempsPreparation),
+                            new XElement("Difficulte", r.Difficulte),
+                            new XElement("Ingredients", r.Ingredients.Select(i => new XElement("Ingredient", i))),
+                            new XElement("Calories", r.Calories)
+                        ))));
+
+            doc.Save(xmlPath);
+            Console.WriteLine($"Conversion realisee : {xmlPath}");
+        }
+
         public void ExportToJson(IEnumerable<Recipe> recipes, string jsonPath)
         {
             var options = new JsonSerializerOptions { WriteIndented = true };

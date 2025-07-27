@@ -85,4 +85,69 @@
     </Ingredients>
     <Calories>350</Calories>
   </Recette>
+  <Recette>
+    <Nom>Lasagnes Bolognaise</Nom>
+    <TempsPreparation>45</TempsPreparation>
+    <Difficulte>Difficile</Difficulte>
+    <Ingredients>
+      <Ingredient>pâtes à lasagne</Ingredient>
+      <Ingredient>viande hachée</Ingredient>
+      <Ingredient>sauce tomate</Ingredient>
+      <Ingredient>béchamel</Ingredient>
+      <Ingredient>fromage râpé</Ingredient>
+    </Ingredients>
+    <Calories>800</Calories>
+  </Recette>
+  <Recette>
+    <Nom>Quiche Lorraine</Nom>
+    <TempsPreparation>35</TempsPreparation>
+    <Difficulte>Moyen</Difficulte>
+    <Ingredients>
+      <Ingredient>pâte brisée</Ingredient>
+      <Ingredient>lardons</Ingredient>
+      <Ingredient>œufs</Ingredient>
+      <Ingredient>crème fraîche</Ingredient>
+      <Ingredient>gruyère</Ingredient>
+    </Ingredients>
+    <Calories>600</Calories>
+  </Recette>
+  <Recette>
+    <Nom>Burger maison</Nom>
+    <TempsPreparation>30</TempsPreparation>
+    <Difficulte>Facile</Difficulte>
+    <Ingredients>
+      <Ingredient>pain burger</Ingredient>
+      <Ingredient>steak haché</Ingredient>
+      <Ingredient>fromage</Ingredient>
+      <Ingredient>salade</Ingredient>
+      <Ingredient>sauce burger</Ingredient>
+    </Ingredients>
+    <Calories>700</Calories>
+  </Recette>
+  <Recette>
+    <Nom>Curry de légumes</Nom>
+    <TempsPreparation>35</TempsPreparation>
+    <Difficulte>Moyen</Difficulte>
+    <Ingredients>
+      <Ingredient>carotte</Ingredient>
+      <Ingredient>pois chiches</Ingredient>
+      <Ingredient>lait de coco</Ingredient>
+      <Ingredient>curry</Ingredient>
+      <Ingredient>riz</Ingredient>
+    </Ingredients>
+    <Calories>400</Calories>
+  </Recette>
+  <Recette>
+    <Nom>Gâteau au chocolat</Nom>
+    <TempsPreparation>50</TempsPreparation>
+    <Difficulte>Moyen</Difficulte>
+    <Ingredients>
+      <Ingredient>chocolat noir</Ingredient>
+      <Ingredient>beurre</Ingredient>
+      <Ingredient>sucre</Ingredient>
+      <Ingredient>œufs</Ingredient>
+      <Ingredient>farine</Ingredient>
+    </Ingredients>
+    <Calories>900</Calories>
+  </Recette>
 </Recettes>
