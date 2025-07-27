@@ -1,0 +1,16 @@
+[
+  {
+    "Nom": "Pâtes Carbonara",
+    "TempsPreparation": 20,
+    "Difficulte": "Facile",
+    "Ingredients": ["pâtes", "lardons", "œuf", "crème"],
+    "Calories": 650
+  },
+  {
+    "Nom": "Ratatouille",
+    "TempsPreparation": 40,
+    "Difficulte": "Moyen",
+    "Ingredients": ["courgette", "aubergine", "poivron", "tomate"],
+    "Calories": 300
+  }
+]
